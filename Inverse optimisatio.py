@@ -3,11 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
 
 """
-Question 1c
 Inverse optimisation: generate > 2000 random allocations sets n × 1 (not optimal), and plot
-the cloud of points of µΠ vertically on σΠ horizontally. How you standardise each set to satisfy
-w01 = 1 is up to you. If not coding but using spreadsheets then it is allowed to have ≈ 200 random
-allocations sets of low discrepancy, ie this smaller Nsim must reveal a good picture.
+the cloud of points of µ vertically on σ horizontally. 
 """
 
 # Variables
