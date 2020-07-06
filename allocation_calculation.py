@@ -2,7 +2,6 @@ import numpy as np
 import seaborn as sns; sns.set()
 
 """
-Question 1b
 Compute the allocations w∗ and portfolio risk σΠ = pw0Σw, for m = 4:5%. Stress the correlation
 matrix: multiply all correlations by ×1:25 and ×1:5, and compute the respective optimal allocations
 and portfolio risk (the same m = 4:5%)
