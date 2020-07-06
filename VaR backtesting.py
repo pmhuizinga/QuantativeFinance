@@ -18,7 +18,7 @@ import seaborn as sns;
 
 sns.set()
 
-filepath = Path(r'C:\Users\PaulMarjanIlseMeike\Dropbox\Paul\DataScience\Opleiding\CQF\Module2\exam\SP500.csv')
+filepath = Path(r'SP500.csv')
 df = pd.read_csv(filepath)
 df.columns = ['date', 'price']
 
@@ -62,12 +62,12 @@ df['ewma_VaR'] = -(df['ewma_std'] * 2.33 * np.sqrt(10))
 df['ewma_breach'] = np.where(df['ewma_VaR'] > df['log_return_10d'], 1, 0)
 df['ewma_consecutive_breach'] = np.where((df['ewma_breach'].shift(1) == 1) & (df['ewma_breach'] == 1), 1, 0)
 
-# 3.B.1 report the percentage of VaR breaches
+# Report the percentage of VaR breaches
 pct_breach = (len(df[df['ewma_breach'] == 1]) / len(df)) * 100
 print('The number of VaR breaches using EWMA is {}. This is {} percent'.format(len(df[df['ewma_breach'] == 1]),
                                                                                pct_breach))
 
-# 3.B.2: report the number of consecutive breaches
+# Report the number of consecutive breaches
 print('The number of consecutive breaches using ewma is {}'.format(df['ewma_consecutive_breach'].sum()))
 
 # 3.B.3: Provide a plot which clearly identifies breaches
